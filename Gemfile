@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
@@ -14,6 +15,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+gem 'thread_safe'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails', '4.0.2'
@@ -28,9 +30,10 @@ gem 'bootstrap-timepicker-rails'
 gem 'chronic'
 gem 'gon'
 
+gem 'pg', '0.12.2'
+
 group :development, :test do 
   gem 'rspec-rails', '2.9.0'
-  gem 'pg', '0.12.2'
   gem 'guard-rspec', '0.5.5'
   gem 'annotate'
   gem 'factory_girl_rails', '1.4.0'
@@ -44,7 +47,7 @@ group :doc do
 end
 
 group :production do 
-  gem 'pg', '0.12.2'
+  #gem 'pg', '0.12.2'
 end
 
 

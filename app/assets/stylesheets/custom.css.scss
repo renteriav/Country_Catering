@@ -21,7 +21,7 @@ html {
 }
 
 body {
-	padding-top: 145px;
+	padding-top: 180px;
 }
 
 section {
@@ -45,28 +45,41 @@ textarea {
 
 
 /* header */
+
 .header-top{
-	background-image: url('main/cc_logo.png');
+	background: url('main/cc_logo.png') no-repeat;
+	background-position: 40px 10px;
 	background-color: $navbarBackgroundHighlight;
 	position: relative;
-	height: 60px;
+	min-height: 180px;
 }
-.logo {
-	position: relative;
-	margin-left: 70px;
-	margin-top: 15px; 
-	font-size: 3em;
-	background: $navbarBackgroundHighlight;
-	float: left;
-	color: white !important; 
-	text-transform: uppercase; 
-	letter-spacing: -1px;  
-	line-height: 1;
-	width: 100%;
+
+.navbar-inner{
+	margin-top: 100px;
+	margin-right: 50px;
+	float: right;
 }
 .logo:hover {
 	color: gray; 
 	text-decoration: none;
+}
+
+ul.nav>li{
+	padding: 0px 10px !important;
+	border-right: 1px solid red;
+	margin: 0px;
+}
+
+.nav > li > a{
+	padding: 0px 10px !important;
+}
+
+.first-link{
+	border-right: 1px solid red;
+	border-left: 1px solid red;
+}
+.navbar-inner{
+	padding: 0px !important;
 }
 
 /* footer */
