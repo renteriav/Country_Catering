@@ -1,0 +1,244 @@
+$linkColor: #cfaa99;
+$navbarText:                      white !default;
+$navbarLinkColor:                 white;
+$navbarLinkColorHover:            #B6819E;
+$navbarLinkColorActive:           #E0E0EB;
+$navbarLinkBackgroundActive:      #A4748E;
+$navbarBackgroundHighlight: rgb(2, 0, 49); 
+$navbarBackground: rgb(109, 51, 83);
+@import "bootstrap";
+
+/* universal */
+h1 {
+	margin-bottom: 10px;
+	background-color: grey;
+	padding: 10px;
+	background-image: linear-gradient(to bottom, #C4C0C4, #D9DADB);
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	padding-top: 145px;
+}
+
+section {
+	overflow: auto;
+}
+
+textarea {
+	resize: vertical;
+}
+
+.center { 
+	text-align: center !important;
+	h1 { 
+	margin-bottom: 10px;
+	}
+}
+
+.inline {
+	display: inline-block !important;
+}
+
+
+/* header */
+.header-top{
+	background-image: url('main/cc_logo.png');
+	background-color: $navbarBackgroundHighlight;
+	position: relative;
+	height: 60px;
+}
+.logo {
+	position: relative;
+	margin-left: 70px;
+	margin-top: 15px; 
+	font-size: 3em;
+	background: $navbarBackgroundHighlight;
+	float: left;
+	color: white !important; 
+	text-transform: uppercase; 
+	letter-spacing: -1px;  
+	line-height: 1;
+	width: 100%;
+}
+.logo:hover {
+	color: gray; 
+	text-decoration: none;
+}
+
+/* footer */
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #eaeaea; 
+	color: #999;
+}
+footer a { 
+	color: #555;
+}
+footer a:hover { 
+	color: #222;
+}
+footer small { 
+	float: left;
+}
+footer ul {
+	float: right; 
+	list-style: none;
+}
+footer ul li { 
+	float: left; 
+	margin-left: 10px;
+}
+
+/* mixins, variables, etc. */ 
+$grayMediumLight: #eaeaea;
+@mixin box_sizing { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box;
+}
+
+/* miscellaneous */
+.debug_dump {
+	clear: both;
+	float: left;
+	width: 100%; 
+	margin-top: 45px; 
+	@include box_sizing;
+}
+
+/* sidebar */
+aside { 
+	section {
+		padding: 10px 0;
+		border-top: 1px solid $grayLighter; 
+		&:first-child {
+			border: 0;
+    		padding-top: 0;
+    	}
+	span {
+		display: block;
+		margin-bottom: 3px;
+  		line-height: 1;
+	}
+	h1 {
+		font-size: 1.6em; 
+		text-align: left; 
+		letter-spacing: -1px; 
+		margin-bottom: 3px;
+		} 
+	}
+}
+.gravatar {
+	float: left; 
+	margin-right: 10px;
+}
+
+/* forms */
+input, textarea, select, .uneditable-input { 
+	border: 1px solid #bbb;
+	/*width: 100%;*/
+	padding: 5px;
+	height: auto;
+	/*@include box_sizing;*/
+	color: black;
+}
+
+.input-sm {
+	width:75px;
+}
+
+.input-lrg{
+	width:280px;
+}
+
+.input-med{
+	width:105px;
+}
+.field {
+	margin-right:10px;
+	a{
+		margin-bottom:10px !important;
+	}
+}
+
+.alert-error {
+	padding:6px !important;
+	vertical-align: middle !important;
+}
+
+#error_explanation { 
+	color: #f00;
+ul {
+    list-style: none;
+	margin: 0 0 18px 0; }
+}
+.field_with_errors { 
+	@extend .control-group; 
+	@extend .error;
+	color: #B94A48;
+}
+
+.calendar-icon{
+	width:18px;
+}
+
+/* jquery dialog*/
+span.ui-icon {
+	margin: 0 !important;
+	top: 0% !important;
+	left: 0% !important;
+}
+
+.alert-dialog, .alert-header, .alert-button, {
+	border:1px solid #CD0A0A !important;
+}
+
+.alert-buttonpane{
+	border-top:1px solid #CD0A0A !important;
+}
+.alert-header {
+	background: url("/assets/jquery-ui/blitzer/ui-bg_diagonals-thick_75_f3d8d8_40x40.png") !important;
+}
+
+.alert-content{
+	background:none !important;
+	background-color: white !important;	
+}
+p.alert-content{
+	
+	background-color: white !important;
+	color: black;
+}
+	
+.alert-button {
+	color: #CD0A0A !important;
+	background: url("/assets/jquery-ui/blitzer/ui-bg_highlight-hard_100_eeeeee_1x100.png") repeat-x scroll 50% 50% #E14F1C !important;
+}
+.alert-button:visited{
+	color: #CD0A0A !important;
+}
+
+.alert-button:hover {
+	background: url("/assets/jquery-ui/blitzer/ui-bg_highlight-hard_100_f6f6f6_1x100.png")  repeat-x scroll 50% 50% #E14F1C !important;
+}
+
+.alert-icon {
+	background-image: url("/assets/jquery-ui/blitzer/ui-icons_cc0000_256x240.png") !important;
+}
+
+.alert-icon:hover {
+	background-image: url("/assets/jquery-ui/blitzer/ui-icons_cc0000_256x240.png") !important;
+}
+.ui-widget-overlay {
+	position: fixed !important;
+	z-index: 1040 !important;
+}
+
+.ui-dialog {
+	z-index: 1050 !important;
+}

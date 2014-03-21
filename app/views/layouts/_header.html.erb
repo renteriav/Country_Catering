@@ -1,0 +1,20 @@
+<header >
+	<div class = "navbar-fixed-top">
+		<div class = "header-top" >
+			<%= link_to "Country Catering", root_path, class: "logo" %>
+		</div>
+
+		<div class="navbar">
+			<div class="navbar-inner">
+				<ul class="nav pull-right">
+					<li class = "<%= current_page?(root_path) ? "active" : "" %>" >
+						<%= link_to "Home", root_path %>
+					</li>
+					<li class = <%= active_link("items") %> >
+						<%= link_to "Items", root_path %>
+					</li>
+				</ul>
+			</div>
+        </div>
+	</div>
+</header>
