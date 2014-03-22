@@ -1,10 +1,10 @@
 $linkColor: #cfaa99;
 $navbarText:                      white !default;
-$navbarLinkColor:                 white;
-$navbarLinkColorHover:            #B6819E;
-$navbarLinkColorActive:           #E0E0EB;
-$navbarLinkBackgroundActive:      #A4748E;
-$navbarBackgroundHighlight: rgb(2, 0, 49); 
+$navbarLinkColor:                 #EC1B23;
+$navbarLinkColorHover:            #FFC250;
+$navbarLinkColorActive:           #FFC250;
+$navbarLinkBackgroundActive:      #000;
+$navbarBackgroundHighlight: #000; 
 $navbarBackground: rgb(109, 51, 83);
 @import "bootstrap";
 
@@ -54,32 +54,47 @@ textarea {
 	min-height: 180px;
 }
 
-.navbar-inner{
-	margin-top: 100px;
+.navbar{
+	margin-top: 125px;
 	margin-right: 50px;
 	float: right;
 }
-.logo:hover {
-	color: gray; 
-	text-decoration: none;
-}
 
 ul.nav>li{
-	padding: 0px 10px !important;
-	border-right: 1px solid red;
+	padding: 0px !important;
 	margin: 0px;
 }
 
-.nav > li > a{
+a.active {
 	padding: 0px 10px !important;
+	border-left: 1px solid #FFC250 !important;
+	color: #FFC250 !important;
+	margin: 0px;
+}
+a:hover{
+	padding: 0px 10px !important;
+	border-left: 1px solid #FFC250 !important;
+	color: #FFC250 !important;
+	margin: 0px;
 }
 
-.first-link{
-	border-right: 1px solid red;
-	border-left: 1px solid red;
+a{
+	padding: 0px 10px !important;
+	border-left: 1px solid #EC1B23;
+	font: helvetica sans-serif;
+	font-size: 13px;
+	text-transform: uppercase;
+	line-height: 13px;
 }
-.navbar-inner{
-	padding: 0px !important;
+
+.last-link{
+	border-right: 1px solid #EC1B23;
+	border-left: 1px solid #EC1B23;
+}
+
+.last-link:hover, .last-link-active{
+	border-right: 1px solid #FFC250 !important;
+	border-left: 1px solid #FFC250;
 }
 
 /* footer */
@@ -91,9 +106,11 @@ footer {
 }
 footer a { 
 	color: #555;
+	border: none;
 }
 footer a:hover { 
 	color: #222;
+	border: none !important;
 }
 footer small { 
 	float: left;

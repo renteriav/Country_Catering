@@ -1,13 +1,13 @@
 <header >
 	<div class = "navbar-fixed-top">
 		<div class = "header-top" >
-			<div class="navbar navbar-inner">
+			<div class="navbar">
 				<ul class="nav pull-right">
-					<li class = "<%= current_page?(root_path) ? "active" : "" %> first-link" >
-						<%= link_to "Home", root_path %>
+					<li>
+						<%= link_to "Home", root_path, class: current_page?(root_path) ? "active" : "" %>
 					</li>
-					<li class = <%= active_link("items") %> >
-						<%= link_to "Items", root_path %>
+					<li>
+						<%= link_to "Items", items_path, class: params[:controller] == "items" ? "last-link-active active" : "last-link" %>
 					</li>
 				</ul>
 			</div>
