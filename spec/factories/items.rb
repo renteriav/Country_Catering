@@ -12,5 +12,10 @@
 #  updated_at :datetime
 #
 
-class Item < ActiveRecord::Base
+# Read about factories at http://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :item do
+    name "MyString"
+  end
 end

@@ -12,5 +12,8 @@
 #  updated_at :datetime
 #
 
-class Item < ActiveRecord::Base
-end
+one:
+  name: 
+
+two:
+  name: 

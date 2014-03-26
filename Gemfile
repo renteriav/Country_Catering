@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails', '4.0.2'
 gem 'jquery-ui-themes'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'bootstrap-sass', '2.3.2.0'
@@ -62,3 +63,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem "mocha", group: :test

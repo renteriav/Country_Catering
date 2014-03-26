@@ -1,0 +1,37 @@
+<%= form_for(@item) do |f| %>
+  <% if @item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+      <% @item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field inline">
+    <%= f.label :price %>
+    <%= f.text_field :price, class: "price input-med", placeholder: "US$ 0.00" %>
+  </div>
+  <div class="field inline">
+    <%= f.label :unit %>
+    <%= f.select :unit, options_for_select({Lb: "lb", Gal: "gal" }, @selected_unit), {:include_blank => "--"}, {:class => "input-sm"}  %>
+  </div><br>
+  <div class="field inline">
+    <%= f.label :proportion %>
+    <%= f.text_field :proportion, class: "proportion input-sm", placeholder: "0.00" %>
+  </div>
+  <div class="field inline">
+    <%= f.label :category %>
+    <%= f.select :category, options_for_select(item_categories, @selected_category), {:include_blank => "--"}, {class: "input-med"} %>
+  </div>
+  <div class="actions">
+    <%= f.submit value = "Submit", {class: "btn btn-large btn-inverse"} %>
+  </div>
+<% end %>

@@ -1,4 +1,4 @@
-$linkColor: #cfaa99;
+/* $linkColor: */
 $navbarText:                      white !default;
 $navbarLinkColor:                 #EC1B23;
 $navbarLinkColorHover:            #FFC250;
@@ -65,20 +65,20 @@ ul.nav>li{
 	margin: 0px;
 }
 
-a.active {
+header a.active {
 	padding: 0px 10px !important;
 	border-left: 1px solid #FFC250 !important;
 	color: #FFC250 !important;
 	margin: 0px;
 }
-a:hover{
+header a:hover{
 	padding: 0px 10px !important;
 	border-left: 1px solid #FFC250 !important;
 	color: #FFC250 !important;
 	margin: 0px;
 }
 
-a{
+header a{
 	padding: 0px 10px !important;
 	border-left: 1px solid #EC1B23;
 	font: helvetica sans-serif;
@@ -168,6 +168,10 @@ aside {
 	margin-right: 10px;
 }
 
+.btn-danger {
+	color: white !important;
+}
+
 /* forms */
 input, textarea, select, .uneditable-input { 
 	border: 1px solid #bbb;
@@ -176,6 +180,16 @@ input, textarea, select, .uneditable-input {
 	height: auto;
 	/*@include box_sizing;*/
 	color: black;
+}
+.category_header{
+	background-color:#D9EDF7;
+	text-align: left;
+	border-collapse: separate;
+	padding: 8px;
+	width: 100%;
+}
+.input-xsm {
+	width:50px;
 }
 
 .input-sm {
@@ -187,7 +201,7 @@ input, textarea, select, .uneditable-input {
 }
 
 .input-med{
-	width:105px;
+	width:120px;
 }
 .field {
 	margin-right:10px;
