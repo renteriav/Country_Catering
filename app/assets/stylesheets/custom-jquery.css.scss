@@ -1,0 +1,55 @@
+/* jquery alert dialog*/
+span.ui-icon {
+	margin: 0 !important;
+	top: 0% !important;
+	left: 0% !important;
+}
+
+.alert-dialog, .alert-header, .alert-button, {
+	border:1px solid #CD0A0A !important;
+}
+
+.alert-buttonpane{
+	border-top:1px solid #CD0A0A !important;
+}
+.alert-header {
+	background: url("/assets/jquery-ui/blitzer/ui-bg_diagonals-thick_75_f3d8d8_40x40.png") !important;
+}
+
+.alert-content{
+	background:none !important;
+	background-color: white !important;	
+}
+p.alert-content{
+	
+	background-color: white !important;
+	color: black;
+}
+	
+.alert-button {
+	color: #CD0A0A !important;
+	background: url("/assets/jquery-ui/blitzer/ui-bg_highlight-hard_100_eeeeee_1x100.png") repeat-x scroll 50% 50% #E14F1C !important;
+}
+.alert-button:visited{
+	color: #CD0A0A !important;
+}
+
+.alert-button:hover {
+	background: url("/assets/jquery-ui/blitzer/ui-bg_highlight-hard_100_f6f6f6_1x100.png")  repeat-x scroll 50% 50% #E14F1C !important;
+}
+
+.alert-icon {
+	background-image: url("/assets/jquery-ui/blitzer/ui-icons_cc0000_256x240.png") !important;
+}
+
+.alert-icon:hover {
+	background-image: url("/assets/jquery-ui/blitzer/ui-icons_cc0000_256x240.png") !important;
+}
+.ui-widget-overlay {
+	position: fixed !important;
+	z-index: 1040 !important;
+}
+
+.ui-dialog {
+	z-index: 1050 !important;
+}

@@ -19,10 +19,12 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.new(item_params)
+    @selected_category = params[:item][:category]
+    @selected_unit = params[:item][:unit]
 
     respond_to do |format|
       if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
+        format.html { redirect_to @item, notice: 'Item successfully created !' }
         
       else
         format.html { render action: 'new' }
@@ -31,9 +33,11 @@ class ItemsController < ApplicationController
   end
 
   def update
+    @selected_category = params[:item][:category]
+    @selected_unit = params[:item][:unit]
     respond_to do |format|
       if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+        format.html { redirect_to @item, notice: 'Item successfully updated !' }
       else
         format.html { render action: 'edit' }
       end

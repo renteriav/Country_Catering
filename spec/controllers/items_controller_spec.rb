@@ -24,7 +24,11 @@ describe ItemsController do
   # Item. As you add validations to Item, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :name => "My Name",
+      :price => 66.50,
+      :unit => "Lbs"
+    }
   end
   
   # This should return the minimal set of values that should be in the session

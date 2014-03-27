@@ -1,9 +1,21 @@
-<p id="notice"><%= notice %></p>
+<h3 id="notice" class="bg-success"><%= notice %></h3>
 
 <p>
   <strong>Name:</strong>
   <%= @item.name %>
 </p>
+<p>
+  <strong>Price:</strong>
+  <%= "#{number_to_currency(@item.price)} per #{@item.unit}." %>
+</p>
+<p>
+  <strong>Proportion:</strong>
+  <%= "#{@item.proportion} #{@item.unit.pluralize}. per person" %>
+</p>
+<p>
+  <strong>Category:</strong>
+  <%= category_decoder(@item.category) %>
+</p>
 
 <%= link_to 'Edit', edit_item_path(@item) %> |
-<%= link_to 'Back', items_path %>
+<%= link_to 'Back to item list', items_path %>
