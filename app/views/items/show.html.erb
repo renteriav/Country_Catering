@@ -6,11 +6,13 @@
 </p>
 <p>
   <strong>Price:</strong>
-  <%= "#{number_to_currency(@item.price)} per #{@item.unit}." %>
+  <% @item.unit == "each" ? @unit = @item.unit : @unit = "per #{@item.unit}." %>
+  <%= "#{number_to_currency(@item.price)} #{@unit}" %>
 </p>
 <p>
   <strong>Proportion:</strong>
-  <%= "#{@item.proportion} #{@item.unit.pluralize}. per person" %>
+  <% @item.unit == "each" ? "" : @per_person = "#{@item.unit.pluralize}." %>
+  <%= "#{@item.proportion} #{@per_person} per person" %>
 </p>
 <p>
   <strong>Category:</strong>

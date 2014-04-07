@@ -1,0 +1,13 @@
+<div class="alert alert-error ui-state-error">
+      <h5 style = "color: black">
+            <span class="ui-icon ui-icon-alert inline"></span> Alert!
+            <small style="color:black;">
+                  The following fields need attention:
+            </small>
+      </h5>
+      <ul>  
+            <% @object.errors.each do |sym, msg| %>
+                <li><%= msg %></li>
+            <% end %>
+      </ul>
+</div>

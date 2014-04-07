@@ -1,0 +1,16 @@
+  <div class="field">
+    <%= f.label :street %>
+    <%= f.text_field :street, class: "input-lrg", autocomplete: "off" %>
+  </div>
+  <div class="field">
+    <%= f.label :city %>
+    <%= f.text_field :city, class: "input-lrg", autocomplete: "off", value: "Bend" %>
+  </div>
+  <div class="field inline">
+    <%= f.label :state %>
+    <%= f.select :state, options_for_select(us_states, @selected_state), {:include_blank => false }, { class: "span2" } %>
+  </div>
+  <div class="field inline">
+    <%= f.label :zip %>
+    <%= f.text_field :zip, maxlength: 5, class: "span2 zip" %>
+  </div>

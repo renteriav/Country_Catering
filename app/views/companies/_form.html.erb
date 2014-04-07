@@ -1,0 +1,33 @@
+<div>
+  <div class = "inline">
+<%= form_for(@company) do |f| %>
+<fieldset>
+    <legend>Company Info</legend>
+  <div class="field inline">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <%= f.fields_for :telephones do |builder| %>
+  <%= render "telephones/telephone_fields", :f => builder%>
+  <% end %>
+</fieldset>
+<fieldset>
+    <legend>Delivery Address</legend>
+      <div>
+        <%= f.fields_for :addresses do |builder| %>
+          <%= render "addresses/addresses_fields", :f => builder, :@person => @customer %>
+        <% end %>
+      </div>
+</fieldset>
+  <div class="inline">
+    <%= link_to "Cancel", companies_path, {class: "btn btn-large btn-inverse field"} %>
+  </div>
+  <div class="inline">
+    <%= f.submit value = "Submit", {class: "btn btn-large btn-inverse field"} %>
+  </div>
+</div>
+  <div class = "inline error_box">
+    <%= display_error_box(@company) %>
+  </div>
+</div>
+<% end %>

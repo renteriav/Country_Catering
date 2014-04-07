@@ -1,41 +1,49 @@
+<div>
+  <div class = "inline">
 <%= form_for(@item) do |f| %>
-  <%# display_error_box(@item) %>
-
-  <div class="field inline">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <div class="field inline">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
+      <%# display_error(@item, "name") %>
+    <br>
+    <div class="field inline">
+      <%= f.label :price %>
+      <%= f.text_field :price, class: "price input-med", placeholder: "US$ 0.00" %>
+    </div>
+    <div class="field inline">
+      <%= f.label :unit %>
+      <%= f.select :unit, units_select, {:include_blank => "--"}, {:class => "input-sm"}  %>
+    </div>
+    <% if @item.errors[:price].present? %>
+      <%# display_error(@item, "price") %>
+    <% elsif @item.errors[:unit].present? %>
+      <%= display_error(@item, "unit") %>
+    <% end %>
+    <br>
+    <div class="field inline">
+      <%= f.label :proportion %>
+      <%= f.text_field :proportion, class: "proportion input-sm", placeholder: "0.00" %>
+    </div>
+    <div class="field inline">
+      <%= f.label :category %>
+      <%= f.select :category, item_categories, {:include_blank => "--"}, {class: "input-med"} %>
+    </div>
+    <% if @item.errors[:proportion].present? %>
+      <%# display_error(@item, "proportion") %>
+    <% elsif @item.errors[:category].present? %>
+      <%# display_error(@item, "category") %>
+    <% end %>
+    <br>
+    <div class="inline">
+      <%= link_to "Cancel", items_path, {class: "btn btn-large btn-inverse field"} %>
+    </div>
+    <div class="inline">
+      <%= f.submit value = "Submit", {class: "btn btn-large btn-inverse field"} %>
+    </div>
   </div>
-  <%= display_error(@item, "name") %>
-  <br>
-  <div class="field inline">
-    <%= f.label :price %>
-    <%= f.text_field :price, class: "price input-med", placeholder: "US$ 0.00" %>
+  <div class = "inline error_box">
+    <%= display_error_box(@item) %>
   </div>
-  <div class="field inline">
-    <%= f.label :unit %>
-    <%= f.select :unit, options_for_select({Lb: "lb", Gal: "gal" }, @selected_unit), {:include_blank => "--"}, {:class => "input-sm"}  %>
-  </div>
-  <% if @item.errors[:price].present? %>
-    <%= display_error(@item, "price") %>
-  <% elsif @item.errors[:unit].present? %>
-    <%= display_error(@item, "unit") %>
-  <% end %>
-  <br>
-  <div class="field inline">
-    <%= f.label :proportion %>
-    <%= f.text_field :proportion, class: "proportion input-sm", placeholder: "0.00" %>
-  </div>
-  <div class="field inline">
-    <%= f.label :category %>
-    <%= f.select :category, options_for_select(item_categories, @selected_category), {:include_blank => "--"}, {class: "input-med"} %>
-  </div>
-  <% if @item.errors[:proportion].present? %>
-    <%= display_error(@item, "proportion") %>
-  <% elsif @item.errors[:category].present? %>
-    <%= display_error(@item, "category") %>
-  <% end %>
-  <br>
-  <div class="actions">
-    <%= f.submit value = "Submit", {class: "btn btn-large btn-inverse"} %>
-  </div>
+</div>
 <% end %>

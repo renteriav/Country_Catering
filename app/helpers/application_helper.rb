@@ -9,9 +9,9 @@ module ApplicationHelper
 		end
 	end
   
-  def active_link(c)
+  def active_link(controllers=[])
     unless current_page?(root_path)
-      params[:controller] == c ? "active" : ""
+      controllers.include?(params[:controller]) ? "active" : ""
     end
   end
 
@@ -25,20 +25,7 @@ module ApplicationHelper
 
   def display_error_box(object)
     if object.errors.any?
-      a = '<div id="error_explanation"><h2>'.html_safe + pluralize(object.errors.count, "error") + ' prohibited this item from being saved:</h2><ul>'.html_safe
-
-      str_array = []
-      object.errors.full_messages.each do |msg|
-       str_array << "<li>" + msg + "</li>"
-      end
-
-      b = str_array.join.html_safe
-
-      c = '</ul></div>'.html_safe
-
-      d = a + b + c
-      return d
+      render 'shared/error_box', :@object => object
     end
   end
-  
 end

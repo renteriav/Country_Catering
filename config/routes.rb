@@ -1,5 +1,10 @@
 CountryCatering::Application.routes.draw do
   
+  resources :companies do
+    resources :addresses
+    resources :telephones
+  end
+
   root to: 'home#index'
   
   resources :items

@@ -5,6 +5,9 @@ $navbarLinkColorActive:           #FFC250;
 $navbarLinkBackgroundActive:      #000;
 $navbarBackgroundHighlight: #000; 
 $navbarBackground: rgb(109, 51, 83);
+$dropdownLinkColor:             white;
+$dropdownLinkBackgroundHover:   black;
+
 @import "bootstrap";
 
 /* mixins, variables, etc. */ 
@@ -17,9 +20,9 @@ $grayMediumLight: #eaeaea;
 /* universal */
 
 html {
+ -webkit-font-smoothing: subpixel-antialiased;
 	overflow-y: scroll;
 }
-
 body {
 	padding-top: 180px;
 	background-color: #fff;
@@ -73,32 +76,34 @@ section {
 }
 
 .navbar{
-  margin-top: 125px;
+  margin-top: 115px;
   margin-right: 50px;
   float: right;
 }
 
 ul.nav>li{
-  padding: 0px !important;
   margin: 0px;
+  padding-top: 10px;
+
 }
 
 header a.active {
   padding: 0px 10px !important;
-  border-left: 1px solid #FFC250 !important;
+  border-color: #FFC250 !important;
   color: #FFC250 !important;
   margin: 0px;
 }
 header a:hover{
   padding: 0px 10px !important;
-  border-left: 1px solid #FFC250 !important;
+  border-color: #FFC250;
   color: #FFC250 !important;
   margin: 0px;
 }
 
 header a{
   padding: 0px 10px !important;
-  border-left: 1px solid #EC1B23;
+  border-left: 1px solid;
+  border-color: #EC1B23;
   font: helvetica sans-serif;
   font-size: 13px;
   text-transform: uppercase;
@@ -111,8 +116,7 @@ header a{
 }
 
 .last-link:hover, .last-link-active{
-  border-right: 1px solid #FFC250 !important;
-  border-left: 1px solid #FFC250;
+  border-color: #FFC250 !important;
 }
 
 /* footer */
@@ -144,6 +148,10 @@ footer ul li {
 
 /* forms */
 
+.form_container{
+  padding-left: 100px; 
+  padding-top:30px;
+}
 .input-xsm {
 	width:50px;
 }
@@ -162,7 +170,6 @@ footer ul li {
 
 input, textarea, select, .uneditable-input { 
 	border: 1px solid #bbb;
-	/*width: 100%;*/
 	padding: 5px;
 	height: auto;
 	color: black;
@@ -174,14 +181,11 @@ textarea {
 
 .field {
 	margin-right:10px;
-	a{
+	a, label{
 		margin-bottom:10px !important;
 	}
-}
-
-div {
-  &.field, &.actions {
-    margin-bottom: 10px;
+  input, select{
+    margin-bottom:15px !important;
   }
 }
 
@@ -189,17 +193,24 @@ div {
 
 .alert-error {
 	padding:4px 10px !important;
-  width: 150px;
+  min-width: 150px;
 	vertical-align: middle !important;
 }
 
 .field_with_errors { 
 	@extend .control-group; 
 	@extend .error;
+  margin-bottom: 0px;
 	color: #cd0a0a;
   input{
     border-color: #cd0a0a !important;
   }
+}
+
+.error_box{
+  position: absolute; 
+  top:320px; 
+  padding-left: 20px;
 }
 
 #error_explanation {
@@ -253,8 +264,39 @@ div {
 }
 
 /* custom bootstrap */
-.btn-danger, .btn-success, .btn-info {
+.btn-danger, .btn-success, .btn-info, .btn-inverse {
 	color: white !important;
   min-width: 40px;
 }
 
+li.dropdown{
+  padding-bottom: 15px !important;
+}
+
+.dropdown{
+  position: relative !important;
+}
+
+.dropdown-menu{
+  display: none;        
+  background: url('main/background_3.png') repeat;
+  left: -20px !important;
+  top: 35px;
+  min-width: 200px !important;
+  a{
+  border: none !important;
+  }
+  a, a.active, a:hover{
+    border: none !important;
+  }
+  li{
+  }
+}
+
+.dropdown-menu:after{
+    border-bottom: none !important;
+  }
+
+.dropdown-menu:before{
+    border-bottom: none !important;
+  }

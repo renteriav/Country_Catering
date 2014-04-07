@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
 
   def index
-    @items = Item.all.order("name ASC")
+   @items = Item.all.order("name ASC")
   end
  
   def show
@@ -13,14 +13,10 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @selected_category = @item.category
-    @selected_unit = @item.unit
   end
 
   def create
     @item = Item.new(item_params)
-    @selected_category = params[:item][:category]
-    @selected_unit = params[:item][:unit]
 
     respond_to do |format|
       if @item.save
@@ -33,8 +29,6 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @selected_category = params[:item][:category]
-    @selected_unit = params[:item][:unit]
     respond_to do |format|
       if @item.update(item_params)
         format.html { redirect_to @item, notice: 'Item successfully updated !' }

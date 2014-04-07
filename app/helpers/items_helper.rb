@@ -20,4 +20,15 @@ module ItemsHelper
     		"Not a Category"
     	end
     end
+
+    def units_select
+    	{
+    		"oz." => "oz",
+    		"lb." => "lb",
+    		"fl. oz." => "fl. oz",
+    		"gal." => "gal",
+    		"each" => "each",
+    		"hour" => "hour"
+    	}
+    end
 end
